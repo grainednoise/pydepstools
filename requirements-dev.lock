@@ -12,8 +12,19 @@ certifi==2024.2.2
     # via requests
 charset-normalizer==3.3.2
     # via requests
+click==8.1.7
+    # via pydepstools
 idna==3.6
     # via requests
+iniconfig==2.0.0
+    # via pytest
+packaging==23.2
+    # via pydepstools
+    # via pytest
+pluggy==1.4.0
+    # via pytest
+pytest==8.0.2
+    # via pydepstools
 requests==2.31.0
     # via pydepstools
 urllib3==2.2.1

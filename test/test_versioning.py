@@ -37,9 +37,7 @@ def test_compatible_versions2():
 
 
 def test_compatible_versions3():
-    compat = compatible_python_versions(
-        ">3.5.0"
-    )
+    compat = compatible_python_versions(">3.5.0")
     assert compat == frozenset(
         [
             Version("3.6"),
@@ -54,9 +52,7 @@ def test_compatible_versions3():
 
 
 def test_compatible_versions4():
-    compat = compatible_python_versions(
-        "!=3.9*"
-    )
+    compat = compatible_python_versions("!=3.9*")
 
     assert compat == frozenset(
         [
@@ -72,9 +68,7 @@ def test_compatible_versions4():
 
 
 def test_compatible_versions5():
-    compat = compatible_python_versions(
-        "<4"
-    )
+    compat = compatible_python_versions("<4")
 
     assert compat == frozenset(
         [
@@ -89,6 +83,11 @@ def test_compatible_versions5():
         ]
     )
 
+
 def test_extend_version1():
     with pytest.raises(InvalidVersion):
         Version("2.0.0-final")
+
+
+def test_tag():
+    assert P

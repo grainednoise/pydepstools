@@ -1,17 +1,21 @@
-from pprint import pprint
+#!/usr/bin/env python3
 
 import click
 from packaging.version import parse as version_parse
 
+from pydepstools import screenout
 from pydepstools.pypiclient import Client
 from pydepstools.pypidata import PypiData
 
 
 @click.command()
-@click.argument("requirements", type=click.Path(exists=True, dir_okay=False, readable=True))
+@click.argument(
+    "requirements", type=click.Path(exists=True, dir_okay=False, readable=True)
+)
 def process(requirements):
     print("Starting")
     client = Client()
+    screenout.VERBOSE = True
 
     for line in open(requirements):
         if not line.startswith("#"):
